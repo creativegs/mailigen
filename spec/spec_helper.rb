@@ -1,19 +1,17 @@
 require 'mailigen'
-require 'rspec/autorun'
-require 'coveralls'
-
-Coveralls.wear!
+require 'mailigen_api_response_helper'
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
 
 RSpec.configure do |config|
 end
 
 def invalid_mailigen_obj
-  Mailigen::Api.new "fookey"
+  Mailigen::Api.new("invalid_api_key")
 end
 
 def valid_mailigen_obj
-  hash = YAML.load(File.read("#{File.dirname(__FILE__)}/keys/api.yml"))
-  return Mailigen::Api.new hash["mailigen"]["api_key"]
+  return Mailigen::Api.new("9f62d5e5629e3dbd898810463da3569d", true)
 rescue
   return nil
 end

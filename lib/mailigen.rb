@@ -1,8 +1,10 @@
-require "active_support/dependencies"
+require "active_support/all"
 
 require "mailigen/version"
 require "mailigen/no_api_key_error"
 require "mailigen/api"
+require "retryable"
+require "pry"
 
 module Mailigen
 
