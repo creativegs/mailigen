@@ -6,11 +6,11 @@ require 'mailigen/version'
 Gem::Specification.new do |spec|
   spec.name          = "mailigen"
   spec.version       = Mailigen::VERSION
-  spec.authors       = ["Arturs Braucs"]
-  spec.email         = ["arturs@creo.mobi"]
+  spec.authors       = ["Arturs Braucs", "Augusts Bautra"]
+  spec.email         = ["cto@creative.gs"]
   spec.description   = %q{Mailigen.com API wrapper}
   spec.summary       = %q{Mailigen.com API wrapper}
-  spec.homepage      = "http://dev.mailigen.com/pages/viewpage.action?pageId=327689"
+  spec.homepage      = "https://github.com/CreativeGS/mailigen"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -23,9 +23,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport", ">= 3.0"
   spec.add_dependency "retryable", ">= 2.0.4" # retry flaky remote requests
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec", "~> 3.5.0"
+  spec.add_development_dependency "bundler", "~> 1.15.0"
+  spec.add_development_dependency "rake", "~> 12.1.0"
+  spec.add_development_dependency "rspec", "~> 3.6.0"
   spec.add_development_dependency "pry", "~> 0.10.4"
   spec.add_development_dependency "webmock", "~> 2.3.2"
+  spec.add_development_dependency "simplecov", '~> 0.10.0' # ģenerē rspec testu coverage report
 end

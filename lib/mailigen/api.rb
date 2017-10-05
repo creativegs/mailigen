@@ -17,7 +17,7 @@ module Mailigen
     def initialize(api_key, secure=false)
       self.api_key = api_key
       self.secure = secure
-      raise NoApiKeyError, "You must have Mailigen API key." if self.api_key.blank?
+      raise(NoApiKeyError, "You must have Mailigen API key.") if self.api_key.blank?
     end
 
     # Call Mailigen api method (Documented in http://dev.mailigen.com/display/AD/Mailigen+API )
@@ -37,9 +37,9 @@ module Mailigen
       resp = post_api(url, params)
 
       begin
-        return JSON.parse(resp)
+        JSON.parse(resp)
       rescue
-        return resp.tr('"','')
+        resp.tr('"','')
       end
     end
 
@@ -59,7 +59,7 @@ module Mailigen
       #
       # @return
       # response body
-      def post_api url, params
+      def post_api(url, params)
         uri = URI.parse(url)
         http = Net::HTTP.new(uri.host, uri.port)
         http.use_ssl = self.secure
