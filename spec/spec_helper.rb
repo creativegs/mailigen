@@ -1,6 +1,8 @@
 require "cov_helper"
 require 'mailigen'
 require 'mailigen_api_response_helper'
+require "pry"
+
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
 
