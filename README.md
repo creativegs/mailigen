@@ -4,7 +4,9 @@ Wrapper for `mailigen.com` API.
 ## Installation
 
 ```rb
-gem 'mailigen', git: 'https://github.com/CreativeGS/mailigen', ref: "efd8cf899d938dddb50f649826071978453a0a81"
+gem 'mailigen',
+  git: 'https://github.com/CreativeGS/mailigen',
+  tag: 'v0.2.3'
 ```
 
 ## Usage
@@ -16,7 +18,8 @@ Examples:
 ```rb
 require "mailigen"
 
-mailigen = Mailigen::Api.new(YOUR_MAILIGEN_API_KEY)
+# initialize(api_key, secure=false, verbose=false) 
+mailigen = Mailigen::Api.new(YOUR_MAILIGEN_API_KEY, true, false)
 
 # Ping to check apy key
 mailigen.call(:ping) # returns "Everything's Ok!" if API KEY is correct
