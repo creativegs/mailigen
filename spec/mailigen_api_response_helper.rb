@@ -1,19 +1,19 @@
 # NB, responses gathered on 2017-01-24
 
 def mock_ping_response
-  return "Everything's Ok!"
+  "Everything's Ok!"
 end
 
 def mock_ping_error_response
-  return {"error"=>"Invalid Mailigen API Key: invalid_api_key", "code"=>104}
+  {"error"=>"Invalid Mailigen API Key: invalid_api_key", "code"=>104}
 end
 
 def mock_listCreate_response(list_name="test_list")
-  return Digest::SHA256.hexdigest(list_name).first(8)
+  Digest::SHA256.hexdigest(list_name).first(8)
 end
 
 def mock_lists_response(needed_list_name)
-  return [
+  [
     {
       "id"=>"194be8bf",
       "web_id"=>479143,
@@ -47,7 +47,7 @@ end
 
 # returns list's fields
 def mock_listMergeVars_response
-  return [
+  [
     {
       "name"=>"Email Address",
       "req"=>true,
@@ -82,9 +82,9 @@ def mock_listMergeVars_response
 end
 
 def mock_listMergeVarAdd_response
-  return "true"
+  "true"
 end
 
 def mock_listBatchSubscribe_response
-  return {"success_count"=>3, "error_count"=>0, "errors"=>[]}
+  {"success_count"=>3, "error_count"=>0, "errors"=>[]}
 end

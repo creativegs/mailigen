@@ -1,9 +1,11 @@
 require "active_support/all"
 
+require "retryable"
+require "rest-client"
+
 require "mailigen/version"
 require "mailigen/no_api_key_error"
 require "mailigen/api"
-require "retryable"
 
 module Mailigen
   mattr_accessor :api_host

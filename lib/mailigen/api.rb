@@ -7,16 +7,18 @@ require 'active_support/core_ext/object'
 module Mailigen
   class Api
 
-    attr_accessor :api_key, :secure
+    attr_accessor :api_key, :secure, :verbose
 
     # Initialize API wrapper.
     #
     # @param api_key - from mailigen.com . Required.
     # @param secure - use SSL. By default FALSE
     #
-    def initialize(api_key, secure=false)
+    def initialize(api_key, secure=false, verbose=false)
       self.api_key = api_key
       self.secure = secure
+      self.verbose = verbose
+
       raise(NoApiKeyError, "You must have Mailigen API key.") if self.api_key.blank?
     end
 
@@ -60,11 +62,19 @@ module Mailigen
       # @return
       # response body
       def post_api(url, params)
-        uri = URI.parse(url)
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = self.secure
-        form_params = params.to_query
-        res = http.post(uri.request_uri, form_params)
+        if verbose
+          puts "About to post to Mailigen:"
+          puts "url: #{url}"
+          puts "params: #{params}"
+        end
+
+        res = RestClient.post(url, params)
+
+        if verbose
+          puts "Got response from Mailigen:"
+          puts res.body
+        end
+
         res.body
       end
 
