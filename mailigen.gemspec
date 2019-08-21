@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.6.0"
   spec.add_development_dependency "pry", "~> 0.10.4"
   spec.add_development_dependency "webmock", "~> 2.3.2"
-  spec.add_development_dependency "simplecov", '~> 0.10.0' # ģenerē rspec testu coverage report
+  spec.add_development_dependency "simplecov", '~> 0.16.1' # ģenerē rspec testu coverage report
 end
