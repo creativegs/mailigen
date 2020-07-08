@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activesupport", ">= 3.0"
   spec.add_dependency "retryable", ">= 2.0.4" # retry flaky remote requests
-  spec.add_dependency "rest-client", "~> 2.0.2"
+  spec.add_dependency "rest-client", ">= 2.0.2", "< 2.2.0"
 
   spec.add_development_dependency "bundler", "~> 1.16.0"
   spec.add_development_dependency "rake", "~> 12.1.0"
