@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "retryable", ">= 2.0.4" # retry flaky remote requests
   spec.add_dependency "rest-client", "~> 2.0.2"
 
-  spec.add_development_dependency "bundler", "~> 1.16.0"
+  spec.add_development_dependency "bundler", "~> 2.2.8"
   spec.add_development_dependency "rake", "~> 12.1.0"
   spec.add_development_dependency "rspec", "~> 3.6.0"
   spec.add_development_dependency "pry", "~> 0.10.4"
